@@ -5,12 +5,13 @@ import AddTransaction from './components/AddTransaction';
 import GlobalState from "./context/GlobalState";
 import "./App.css";
 
+
 function App() {
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col col-sm-12 col-md-6 col-lg-4 mt-3">
-          <GlobalState>   
+    <div className="container mt-2">
+      <div className="row justify-content-center">
+        <div className="col-9 col-sm-8 col-md-6 col-lg-5 col-xl-4 bg-secondary text-white">
+          <GlobalState>
             <Balance />
             <IncomeExp />
             <TransactionList />

@@ -7,43 +7,39 @@ const AddTransaction = () => {
   const [title, setTitle] = useState('')
   const [amount, setAmount] = useState('')
 
-  const handleTitleChange = (e) =>{
+  const handleTitleChange = (e) => {
     setTitle(e.currentTarget.value)
   }
 
-  const handleAmountChange = (e) =>{
+  const handleAmountChange = (e) => {
     setAmount(e.currentTarget.value)
   }
 
-  const sendData = (e) =>{
+  const sendData = (e) => {
     e.preventDefault()
-    addAction({ id: len, title, amount:Number(amount) })
+    addAction({ id: len, title, amount: Number(amount) })
   }
 
   return (
-    <div>
+    <>
       <h6>Add Transaction</h6>
       <hr />
-      <form onSubmit={ sendData }>
+      <form onSubmit={sendData} className="mb-3">
         <div className="form-group">
-          <label htmlFor="title">Text:</label>
-          <input type="text" className="form-control" placeholder="Enter Text" name="title" 
-          value={ title } onChange={ handleTitleChange }/>
+          <label htmlFor="title">Text</label>
+          <input type="text" className="form-control" placeholder="Enter Text" name="title"
+            value={title} onChange={handleTitleChange} />
         </div>
         <div className="form-group">
-          <label htmlFor="amount">Amount:</label>
-          <input type="number" className="form-control" name="amount" 
-          value={ amount } onChange={ handleAmountChange }/>
+          <label htmlFor="amount">Amount</label>
+          <input type="number" className="form-control" name="amount"
+            value={amount} onChange={handleAmountChange} />
         </div>
+        <p>Use Negative sign(-) for Expense</p>
 
-        <div className="form-group">
-        <input type="text" className="form-control-plaintext" 
-        placeholder="Use Negative sign(-) for Expense" />
-        </div>
-        
-        <button type="submit" className="btn btn-primary">Add Transaction</button>
+        <button type="submit" className="btn btn-primary btn-block">Add Transaction</button>
       </form>
-    </div>
+    </>
   );
 };
 

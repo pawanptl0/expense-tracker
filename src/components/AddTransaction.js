@@ -26,13 +26,11 @@ const AddTransaction = () => {
       <hr />
       <form onSubmit={sendData} className="mb-3">
         <div className="form-group">
-          <label htmlFor="title">Text</label>
           <input type="text" className="form-control" placeholder="Enter Text" name="title"
             value={title} onChange={handleTitleChange} />
         </div>
         <div className="form-group">
-          <label htmlFor="amount">Amount</label>
-          <input type="number" className="form-control" name="amount"
+          <input type="number" className="form-control" name="amount" placeholder="Enter Amount"
             value={amount} onChange={handleAmountChange} />
         </div>
         <p>Use Negative sign(-) for Expense</p>
